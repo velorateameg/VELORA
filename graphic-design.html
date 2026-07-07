@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VELORA | Graphic Design</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="logo">
+VELORA
+</div>
+
+
+<ul>
+
+<li>
+<a href="../index.html">Home</a>
+</li>
+
+<li>
+<a href="../index.html#services">Services</a>
+</li>
+
+<li>
+<a href="../index.html#contact">Contact</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+
+
+<section class="service-page">
+
+
+<div class="service-hero">
+
+<h1>
+Graphic Design
+</h1>
+
+<p>
+Creative thumbnails, social media designs and visual branding.
+</p>
+
+</div>
+
+
+
+
+
+<section class="works">
+
+
+<h2>
+Thumbnails
+</h2>
+
+
+
+<div class="works-grid">
+
+
+
+<div class="design-card">
+
+<img src="Falcon 1.png">
+
+<h3>
+Thumbnail 01
+</h3>
+
+</div>
+
+
+
+<div class="design-card">
+
+<img src="../images/thumb2.jpg">
+
+<h3>
+Thumbnail 02
+</h3>
+
+</div>
+
+
+
+<div class="design-card">
+
+<img src="../images/thumb3.jpg">
+
+<h3>
+Thumbnail 03
+</h3>
+
+</div>
+
+
+
+<div class="design-card">
+
+<img src="../images/thumb4.jpg">
+
+<h3>
+Thumbnail 04
+</h3>
+
+</div>
+
+
+
+<div class="design-card">
+
+<img src="../images/thumb5.jpg">
+
+<h3>
+Thumbnail 05
+</h3>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<div class="copyright">
+
+© 2026 VELORA. All Rights Reserved.
+
+</div>
+
+</footer>
+
+
+<script>
+
+// ================= HIDE EMPTY VIDEO CARDS =================
+
+document.querySelectorAll(".work-card").forEach(card=>{
+
+    const video = card.querySelector("video");
+
+    if(!video) return;
+
+    const source = video.querySelector("source");
+
+    if(!source) return;
+
+    fetch(source.getAttribute("src"))
+
+    .then(res=>{
+
+        if(!res.ok){
+
+            card.remove();
+
+        }
+
+    })
+
+    .catch(()=>{
+
+        card.remove();
+
+    });
+
+});
+
+
+
+
+// ================= HIDE EMPTY IMAGE CARDS =================
+
+document.querySelectorAll(".design-card").forEach(card=>{
+
+    const img = card.querySelector("img");
+
+    if(!img) return;
+
+    fetch(img.getAttribute("src"))
+
+    .then(res=>{
+
+        if(!res.ok){
+
+            card.remove();
+
+        }
+
+    })
+
+    .catch(()=>{
+
+        card.remove();
+
+    });
+
+});
+
+
+
+
+// ================= PAGE ANIMATION =================
+
+window.addEventListener("load",()=>{
+
+    document.body.classList.add("loaded");
+
+});
+
+
+
+
+// ================= FIX BACK BUTTON =================
+
+window.addEventListener("pageshow",()=>{
+
+    const loader = document.querySelector(".page-loader");
+
+    if(loader){
+
+        loader.classList.remove("active");
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
