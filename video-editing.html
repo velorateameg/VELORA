@@ -34,21 +34,21 @@ VELORA
 <ul>
 
 <li>
-<a href="../index.html">
+<a href="index.html">
 Home
 </a>
 </li>
 
 
 <li>
-<a href="../index.html#services">
+<a href="index.html#services">
 Services
 </a>
 </li>
 
 
 <li>
-<a href="../index.html#contact">
+<a href="index.html#contact">
 Contact
 </a>
 </li>
@@ -105,7 +105,7 @@ Shorts
 
 <video controls>
 
-<source src="./videos/short1.mp4" type="video/mp4">
+<source src="port 1].mp4" type="video/mp4">
 
 </video>
 
@@ -125,7 +125,7 @@ Short 01
 
 <video controls>
 
-<source src="../videos/short2.mp4" type="video/mp4">
+<source src="Port 2.mp4" type="video/mp4">
 
 </video>
 
@@ -317,6 +317,25 @@ window.addEventListener("pageshow",()=>{
         loader.classList.remove("active");
 
     }
+
+});
+document.querySelectorAll(".work-card video").forEach(video=>{
+
+    video.addEventListener("loadedmetadata",()=>{
+
+        const card = video.closest(".work-card");
+
+        if(video.videoHeight > video.videoWidth){
+
+            card.classList.add("portrait");
+
+        }else{
+
+            card.classList.add("landscape");
+
+        }
+
+    });
 
 });
 
