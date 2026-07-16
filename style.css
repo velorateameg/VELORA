@@ -1236,40 +1236,7 @@ margin-bottom:40px;
 }
 
 
-.works-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
 
-.work-card{
-    background:#111;
-    border-radius:18px;
-    overflow:hidden;
-}
-
-.work-card video{
-    width:100%;
-    display:block;
-    object-fit:cover;
-}
-
-.work-card.portrait{
-    max-width:380px;
-    justify-self:center;
-}
-
-.work-card.landscape{
-    grid-column:span 2;
-}
-
-.work-card.landscape video{
-    aspect-ratio:16/9;
-}
-
-.work-card.portrait video{
-    aspect-ratio:9/16;
-}
 
 /* Mobile */
 
