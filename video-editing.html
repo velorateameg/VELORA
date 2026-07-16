@@ -124,7 +124,7 @@ Short 01
 
 <video controls>
 
-<source src="https://res.cloudinary.com/meriwurg/video/upload/v1783672735/Velora_final_uxnbyb.mp4"type="video/mp4">
+<source src="Port 2.mp4" type="video/mp4">
 
 </video>
 
@@ -144,7 +144,7 @@ Short 02
 
 <video controls>
 
-<source src="https://res.cloudinary.com/meriwurg/video/upload/v1783672731/Port_2_pw1zwq.mp4" type="video/mp4">
+<source src="https://player.cloudinary.com/embed/?cloud_name=meriwurg&public_id=Port_2_pw1zwq" type="video/mp4">
 
 </video>
 
@@ -164,7 +164,7 @@ Short 03
 
 <video controls>
 
-<source src="https://res.cloudinary.com/meriwurg/video/upload/v1783816962/port_3_lolily.mp4" type="video/mp4">
+<source src="../videos/short4.mp4" type="video/mp4">
 
 </video>
 
@@ -184,7 +184,7 @@ Short 04
 
 <video controls>
 
-<source src="https://res.cloudinary.com/meriwurg/video/upload/v1783885753/port_5_uiqgds.mp4" type="video/mp4">
+<source src="../videos/short5.mp4" type="video/mp4">
 
 </video>
 
@@ -197,40 +197,7 @@ Short 05
 </div>
 
 
-    
-<div class="work-card">
 
-<video controls>
-
-<source src="https://res.cloudinary.com/meriwurg/video/upload/v1784161691/vid_u7n763.mp4" type="video/mp4">
-
-</video>
-
-
-<h3>
-Short 06
-</h3>
-
-
-</div>
-
-
-        
-<div class="work-card">
-
-<video controls>
-
-<source src="https://res.cloudinary.com/meriwurg/video/upload/v1784161651/FINAL_i0706u.mp4" type="video/mp4">
-
-</video>
-
-
-<h3>
-Short 06
-</h3>
-
-
-</div>
 </div>
 
 
@@ -263,10 +230,70 @@ Short 06
 
 // ================= HIDE EMPTY VIDEO CARDS =================
 
+document.querySelectorAll(".work-card").forEach(card=>{
+
+    const video = card.querySelector("video");
+
+    if(!video) return;
+
+    const source = video.querySelector("source");
+
+    if(!source) return;
+
+    fetch(source.getAttribute("src"))
+
+    .then(res=>{
+
+        if(!res.ok){
+
+            card.remove();
+
+        }
+
+    })
+
+    .catch(()=>{
+
+        card.remove();
+
+    });
+
+});
+
 
 
 
 // ================= HIDE EMPTY IMAGE CARDS =================
+
+document.querySelectorAll(".design-card").forEach(card=>{
+
+    const img = card.querySelector("img");
+
+    if(!img) return;
+
+    fetch(img.getAttribute("src"))
+
+    .then(res=>{
+
+        if(!res.ok){
+
+            card.remove();
+
+        }
+
+    })
+
+    .catch(()=>{
+
+        card.remove();
+
+    });
+
+});
+
+
+
+
 // ================= PAGE ANIMATION =================
 
 window.addEventListener("load",()=>{
