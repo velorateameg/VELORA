@@ -263,70 +263,10 @@ Short 06
 
 // ================= HIDE EMPTY VIDEO CARDS =================
 
-document.querySelectorAll(".work-card").forEach(card=>{
-
-    const video = card.querySelector("video");
-
-    if(!video) return;
-
-    const source = video.querySelector("source");
-
-    if(!source) return;
-
-    fetch(source.getAttribute("src"))
-
-    .then(res=>{
-
-        if(!res.ok){
-
-            card.remove();
-
-        }
-
-    })
-
-    .catch(()=>{
-
-        card.remove();
-
-    });
-
-});
-
 
 
 
 // ================= HIDE EMPTY IMAGE CARDS =================
-
-document.querySelectorAll(".design-card").forEach(card=>{
-
-    const img = card.querySelector("img");
-
-    if(!img) return;
-
-    fetch(img.getAttribute("src"))
-
-    .then(res=>{
-
-        if(!res.ok){
-
-            card.remove();
-
-        }
-
-    })
-
-    .catch(()=>{
-
-        card.remove();
-
-    });
-
-});
-
-
-
-
 // ================= PAGE ANIMATION =================
 
 window.addEventListener("load",()=>{
