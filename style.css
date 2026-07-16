@@ -1465,3 +1465,55 @@ transform:translateY(0);
 }
 
 }
+
+
+.reviews{
+    padding:100px 8%;
+    display:flex;
+    justify-content:center;
+}
+
+.review-card{
+    max-width:520px;
+    width:100%;
+    background:#111;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:35px;
+}
+
+.client-name{
+    font-size:28px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.review-text{
+    color:#ddd;
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.instagram-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 22px;
+    border-radius:12px;
+    background:#7c7cff;
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.instagram-btn svg{
+    width:20px;
+    height:20px;
+}
+
+.instagram-btn:hover{
+    background:#5f5fff;
+    transform:translateY(-2px);
+}
