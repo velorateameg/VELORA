@@ -1065,70 +1065,47 @@ margin-top:100px;
 
 .works h2{
 
-text-align:center;
+font-size:40px;
+margin-bottom:40px;
 
 }
-
-
 
 .works-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
-
-
 
 .work-card{
-
-background:#151521;
-
-border-radius:25px;
-
-overflow:hidden;
-
-border:1px solid rgba(255,255,255,.06);
-
-transition:.4s;
-
+    background:#111;
+    border-radius:18px;
+    overflow:hidden;
+    width:100%;
 }
-
-
-
-.work-card:hover{
-
-transform:translateY(-10px);
-
-border-color:#A855F7;
-
-}
-
-
 
 .work-card video{
-
-aspect-ratio:9 / 16;
-width:100%;
-object-fit:cover;
-
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover;
 }
 
-
-
-.work-card h3{
-
-padding:25px;
-
-font-size:22px;
-
+.work-card.portrait{
+    justify-self:center;
+    max-width:380px;
 }
 
+.work-card.landscape{
+    justify-self:stretch;
+}
 
+.work-card.landscape video{
+    aspect-ratio:16/9;
+}
 
+.work-card.portrait video{
+    aspect-ratio:9/16;
+}
 @media(max-width:900px){
 
 .service-hero h1{
