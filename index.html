@@ -626,40 +626,29 @@ VELORA
 
 </div>
 <script>
-
 let cards = document.querySelectorAll(".card");
-
 let loader = document.querySelector(".page-loader");
 
+cards.forEach(card => {
+    card.addEventListener("click", function(e) {
+        e.preventDefault();
+        let link = this.href;
 
-cards.forEach(card=>{
+        loader.classList.add("active");
 
-card.addEventListener("click",function(e){
-
-e.preventDefault();
-
-
-let link = this.href;
-
-
-loader.classList.add("active");
-
-
-setTimeout(()=>{
-
-window.location.href = link;
-
-},1200);
-
-
+        setTimeout(() => {
+            window.location.href = link;
+        }, 1200);
+    });
 });
 
-
+// إخفاء اللودر فوراً عند الرجوع بالمتصفح (Back Button Fix)
+window.addEventListener("pageshow", (event) => {
+    if (loader) {
+        loader.classList.remove("active");
+    }
 });
-
-
 </script>
-
 </body>
 
 </html>
