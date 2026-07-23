@@ -1448,6 +1448,9 @@ body.loaded .work-card:nth-child(6){
 body.loaded .work-card:nth-child(7){
     animation: fadeUp .6s 1.4s forwards;
 }
+body.loaded .work-card:nth-child(8){
+    animation: fadeUp .6s 1.6s forwards;
+}
 @keyframes fadeUp{
 
 from{
